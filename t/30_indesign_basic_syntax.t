@@ -84,6 +84,22 @@ _a-zA-Z0-9!"#$%&'()-=^@`[]{};+:*<>,./?_
 --- expected
 <ParaStyle:本文>これは<cstyle:上付き><fnStart:><pstyle:注釈>ここは注釈です<fnEnd:><cstyle:>です
 
+=== PHP Markdown Extra style footnote
+--- in md2inao
+通常の本文[^1]通常の本文
+
+[^1]: 注釈ですよ。_イタリック_
+--- expected
+<ParaStyle:本文>通常の本文<cstyle:上付き><fnStart:><pstyle:注釈>注釈ですよ。<CharStyle:イタリック（変形斜体）>イタリック<CharStyle:><fnEnd:><cstyle:>通常の本文
+
+===
+--- in md2inao
+通常の本文[^1]通常の本文
+
+[^1]: 注釈ですよ。
+--- expected
+<ParaStyle:本文>通常の本文<cstyle:上付き><fnStart:><pstyle:注釈>注釈ですよ。<fnEnd:><cstyle:>通常の本文
+
 === red
 --- in md2inao
 これは<span class="red">赤文字</span>です
